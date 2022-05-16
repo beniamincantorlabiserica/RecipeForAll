@@ -39,7 +39,7 @@ public class HomeFragment extends Fragment {
     }
 
     public void insertRecipe() {
-        Recipe recipe = new Recipe(binding.recipe.getText().toString(), binding.duration.getText().toString(), binding.username.getText().toString());
+        Recipe recipe = new Recipe(binding.title.getText().toString(), binding.recipe.getText().toString(), binding.duration.getText().toString(), binding.username.getText().toString());
         Log.d("Recipe: ", recipe.getRecipe());
         Log.d("Duration: ", recipe.getDuration());
         Log.d("Username: ", recipe.getUsername());

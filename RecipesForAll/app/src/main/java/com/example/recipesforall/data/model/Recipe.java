@@ -1,11 +1,13 @@
 package com.example.recipesforall.data.model;
 
 public class Recipe {
+    private String title;
     private String recipe;
     private String duration;
     private String username;
 
-    public Recipe(String recipe, String duration, String username) {
+    public Recipe(String title, String recipe, String duration, String username) {
+        this.title = title;
         this.recipe = recipe;
         this.duration = duration;
         this.username = username;
@@ -13,6 +15,14 @@ public class Recipe {
 
     public String getRecipe() {
         return recipe;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public void setRecipe(String recipe) {

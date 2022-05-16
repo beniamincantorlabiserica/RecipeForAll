@@ -24,21 +24,21 @@
         app:layout_constraintVertical_bias="0.033" />
 
     <EditText
-        android:id="@+id/recipe"
+        android:id="@+id/title"
         android:layout_width="300dp"
         android:layout_height="70dp"
-        android:layout_marginTop="68dp"
-        android:hint="@string/write_your_recipe"
+        android:hint="Recipe title"
+        app:layout_constraintBottom_toTopOf="@+id/recipe"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_home" />
+        app:layout_constraintTop_toBottomOf="@+id/text_home"
+        app:layout_constraintVertical_bias="0.762" />
 
     <EditText
         android:id="@+id/duration"
         android:layout_width="300dp"
         android:layout_height="70dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="24dp"
         android:hint="@string/write_the_duration_of_making_the_recipe"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -49,7 +49,7 @@
         android:id="@+id/username"
         android:layout_width="300dp"
         android:layout_height="70dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="16dp"
         android:hint="@string/write_your_name_so_people_know_who_had_this_amazing_idea"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -60,9 +60,20 @@
         android:id="@+id/addRecipe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="80dp"
         android:text="@string/add_recipe"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/username" />
+
+    <EditText
+        android:id="@+id/recipe"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:hint="@string/write_your_recipe"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="208dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

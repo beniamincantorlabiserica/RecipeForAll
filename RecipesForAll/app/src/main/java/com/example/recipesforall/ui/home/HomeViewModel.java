@@ -13,6 +13,7 @@ public class HomeViewModel extends ViewModel {
     private RecipeDAO dao;
 
     public HomeViewModel() {
+        this.dao = new RecipeDAO();
         mText = new MutableLiveData<>();
         mText.setValue("Welcome to Receipt for All, here you can add your recei");
     }
