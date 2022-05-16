@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1015115954234",
+    "project_id": "recipesforall-1e004",
+    "storage_bucket": "recipesforall-1e004.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1015115954234:android:11fb7d028b5375ad8f1d03",
+        "android_client_info": {
+          "package_name": "com.example.recipesforall"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1015115954234-8fntgktrmmffj4mqgf05elkraevqbqs8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBS_ZVT6mC0_YzfSEBXGgTA6TgUe0Jr94U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1015115954234-8fntgktrmmffj4mqgf05elkraevqbqs8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
