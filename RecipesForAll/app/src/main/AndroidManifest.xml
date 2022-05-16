@@ -10,6 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RecipesForAll">
         <activity
+            android:name=".ui.LoginActivity"
+            android:exported="false"
+            android:label="@string/title_activity_login"
+            android:theme="@style/Theme.RecipesForAll.NoActionBar" />
+        <activity
             android:name=".ui.login.LoginActivity"
             android:exported="false"
             android:label="@string/title_activity_login" />
