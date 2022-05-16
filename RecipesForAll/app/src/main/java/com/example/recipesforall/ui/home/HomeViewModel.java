@@ -15,7 +15,7 @@ public class HomeViewModel extends ViewModel {
     public HomeViewModel() {
         this.dao = new RecipeDAO();
         mText = new MutableLiveData<>();
-        mText.setValue("Welcome to Receipt for All, here you can add your recei");
+        mText.setValue("Welcome to Recipe for All, here you can add your recipe");
     }
 
     public LiveData<String> getText() {

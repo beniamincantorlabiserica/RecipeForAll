@@ -1,4 +1,4 @@
-package com.example.recipesforall.ui.notifications;
+package com.example.recipesforall.ui.settings;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
