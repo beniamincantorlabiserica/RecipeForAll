@@ -22,4 +22,9 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="write_your_name_so_people_know_who_had_this_amazing_idea">Write your name, so people know who had this amazing idea</string>
+    <string name="write_the_recipe_here" />
+    <string name="write_your_recipe">Write your recipe</string>
+    <string name="write_the_duration_of_making_the_recipe">Write the duration of making the recipe</string>
+    <string name="add_recipe">Add recipe</string>
 </resources>
