@@ -17,17 +17,10 @@ public class DashboardViewModel extends ViewModel {
 
     public DashboardViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is dashboard fragment");
-//        this.dao = new RecipeDAO();
-//        recipeMutableLiveData = dao.getAllData();
+        mText.setValue("Find the perfect recipe for you");
     }
 
     public LiveData<String> getText() {
         return mText;
-    }
-
-    public ArrayList<Recipe> getAllData() {
-//        System.out.println(dao.getAllData().toString());
-        return null;
     }
 }

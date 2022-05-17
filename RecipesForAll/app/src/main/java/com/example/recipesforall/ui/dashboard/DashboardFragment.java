@@ -56,11 +56,7 @@ public class DashboardFragment extends Fragment {
         database = FirebaseDatabase.getInstance("https://recipesforall-1e004-default-rtdb.europe-west1.firebasedatabase.app/");
         myRef = database.getReference("recipes");
 
-
         recipeLiveData = dao.getStartingData();
-        System.out.println("eibweuBVEiwbfibiecnsCEIUFBweinjecifhjnw3K[2PI3NF");
-        System.out.println("List size: "  + recipeLiveData.size());
-
 
         recipesList = binding.rv;
         recipesList.hasFixedSize();
@@ -79,7 +75,6 @@ public class DashboardFragment extends Fragment {
             }
         });
         recipesList.setAdapter(recipesAdapter);
-        System.out.println("View created ended--------------------------");
     }
 
     public View onCreateView(@NonNull LayoutInflater inflater,

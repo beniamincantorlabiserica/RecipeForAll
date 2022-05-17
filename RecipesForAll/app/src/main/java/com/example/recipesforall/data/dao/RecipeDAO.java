@@ -20,11 +20,7 @@ public class RecipeDAO {
     private DatabaseReference myRef;
     private ArrayList<Recipe> recipes;
 
-
-
     public RecipeDAO() {
-        startDAO();
-
         database = FirebaseDatabase.getInstance("https://recipesforall-1e004-default-rtdb.europe-west1.firebasedatabase.app/");
         myRef = database.getReference("recipes");
         recipes = new ArrayList<>();
@@ -33,7 +29,6 @@ public class RecipeDAO {
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                System.out.println("........................          .......................");
                 ArrayList<Recipe> newRecipes = new ArrayList<>();
                 for (DataSnapshot dataSnapshot: snapshot.getChildren())
                 {
@@ -44,7 +39,6 @@ public class RecipeDAO {
                     recipes.add(index);
                 }
                 System.out.println(newRecipes.size());
-                //adapter.notifyDataSetChanged();
             }
 
             @Override
@@ -58,12 +52,6 @@ public class RecipeDAO {
         System.out.println("Recipes in DAO: " + recipes.size());
         return recipes;
     }
-
-    public void startDAO() {
-
-    }
-
-
 
     public void insertRecipe(Recipe recipe) {
 

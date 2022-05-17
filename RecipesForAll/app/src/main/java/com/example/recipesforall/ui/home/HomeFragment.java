@@ -40,21 +40,11 @@ public class HomeFragment extends Fragment {
 
     public void insertRecipe() {
         Recipe recipe = new Recipe(binding.title.getText().toString(), binding.recipe.getText().toString(), binding.duration.getText().toString(), binding.username.getText().toString());
-        Log.d("Recipe: ", recipe.getRecipe());
-        Log.d("Duration: ", recipe.getDuration());
-        Log.d("Username: ", recipe.getUsername());
         if(recipe != null)
         {
             homeViewModel.insertInDb(recipe);
         }
 
-    }
-
-    public void daoTest() {
-        FirebaseDatabase database = FirebaseDatabase.getInstance("https://recipesforall-1e004-default-rtdb.europe-west1.firebasedatabase.app/");
-        DatabaseReference myRef = database.getReference("message");
-
-        myRef.setValue("Hello, World!");
     }
 
     @Override

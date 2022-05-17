@@ -44,7 +44,6 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         recipeList = dao.getStartingData();
-        Log.d("Adapter", "Enter bind view holder");
         holder.title.setText(recipeList.get(position).getTitle());
         holder.duration.setText(recipeList.get(position).getDuration());
         holder.recipe.setText(recipeList.get(position).getRecipe());
@@ -65,7 +64,6 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
 
         public ViewHolder(View itemView) {
             super(itemView);
-            System.out.println("View holder reached!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
             title = itemView.findViewById(R.id.recipeTitle);
             duration = itemView.findViewById(R.id.recipeDuration);
             recipe = itemView.findViewById(R.id.recipeText);
