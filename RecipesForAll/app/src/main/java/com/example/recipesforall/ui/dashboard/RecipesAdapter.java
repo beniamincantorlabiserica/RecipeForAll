@@ -11,6 +11,7 @@ import androidx.lifecycle.LiveData;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.recipesforall.R;
+import com.example.recipesforall.data.dao.RecipeDAO;
 import com.example.recipesforall.data.model.Recipe;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -21,10 +22,15 @@ import java.util.List;
 public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHolder> {
 
     List<Recipe> recipeList;
+    private RecipeDAO dao;
 
-    public RecipesAdapter(List<Recipe> recipeList) {
+    public RecipesAdapter(RecipeDAO dao, DashboardFragment dashboardFragment) {
+        this.dao = dao;
+        this.recipeList = dao.getStartingData();
+    }
 
-        this.recipeList = recipeList;
+    public RecipesAdapter() {
+
     }
 
     @NonNull
@@ -37,6 +43,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        recipeList = dao.getStartingData();
         Log.d("Adapter", "Enter bind view holder");
         holder.title.setText(recipeList.get(position).getTitle());
         holder.duration.setText(recipeList.get(position).getDuration());
@@ -56,7 +63,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
         TextView recipe;
         TextView username;
 
-        ViewHolder(View itemView) {
+        public ViewHolder(View itemView) {
             super(itemView);
             System.out.println("View holder reached!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
             title = itemView.findViewById(R.id.recipeTitle);

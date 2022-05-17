@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProvider;
@@ -30,28 +31,66 @@ public class DashboardFragment extends Fragment {
 
     private FragmentDashboardBinding binding;
     RecyclerView recipesList;
-    RecipesAdapter recipesAdapter;
+    private FirebaseDatabase database;
+    private DatabaseReference myRef;
+    private RecipesAdapter recipesAdapter;
     ArrayList<Recipe> recipeLiveData;
     DashboardViewModel dashboardViewModel;
     private RecipeDAO dao;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-    dashboardViewModel = new ViewModelProvider(this).get(DashboardViewModel.class);
-        binding = FragmentDashboardBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
+
+
+    public DashboardFragment() {
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
         dao = new RecipeDAO();
+        database = FirebaseDatabase.getInstance("https://recipesforall-1e004-default-rtdb.europe-west1.firebasedatabase.app/");
+        myRef = database.getReference("recipes");
+
+
         recipeLiveData = dao.getStartingData();
+        System.out.println("eibweuBVEiwbfibiecnsCEIUFBweinjecifhjnw3K[2PI3NF");
+        System.out.println("List size: "  + recipeLiveData.size());
+
 
         recipesList = binding.rv;
         recipesList.hasFixedSize();
         recipesList.setLayoutManager(new LinearLayoutManager(this.getContext()));
-        recipesAdapter = new RecipesAdapter(recipeLiveData);
+        recipesAdapter = new RecipesAdapter(dao, this);
+
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                recipesAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
         recipesList.setAdapter(recipesAdapter);
+        System.out.println("View created ended--------------------------");
+    }
+
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             ViewGroup container, Bundle savedInstanceState) {
+        dashboardViewModel = new ViewModelProvider(this).get(DashboardViewModel.class);
+        binding = FragmentDashboardBinding.inflate(inflater, container, false);
+        View root = binding.getRoot();
 
         final TextView textView = binding.textDashboard;
         dashboardViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
-        
+
         return root;
     }
 
