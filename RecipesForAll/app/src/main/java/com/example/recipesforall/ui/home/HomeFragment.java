@@ -33,7 +33,7 @@ public class HomeFragment extends Fragment {
         homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
 
         binding.addRecipe.setOnClickListener(v->{
-            daoTest();
+            insertRecipe();
         });
         return root;
     }
@@ -51,7 +51,7 @@ public class HomeFragment extends Fragment {
     }
 
     public void daoTest() {
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        FirebaseDatabase database = FirebaseDatabase.getInstance("https://recipesforall-1e004-default-rtdb.europe-west1.firebasedatabase.app/");
         DatabaseReference myRef = database.getReference("message");
 
         myRef.setValue("Hello, World!");
